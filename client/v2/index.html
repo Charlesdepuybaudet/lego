@@ -3,6 +3,86 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>🧱 Lego | Predictability of a lego set deal</title>
+    <style>
+      .favorite {
+        cursor: pointer;
+        font-size: 18px;
+        margin-right: 6px;
+      }
+    
+      .favorite.active {
+        color: gold;
+        font-weight: bold;
+      }
+    
+      .deal {
+        margin-bottom: 10px;
+      }
+    
+      .deal span,
+      .deal a {
+        display: inline-block;
+        margin-right: 8px;
+      }
+    
+      .sale {
+        margin: 4px 0;
+      }
+    
+      .sale span,
+      .sale a {
+        display: inline-block;
+        margin-right: 8px;
+      }
+    </style>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #fafafa;
+      }
+    
+      section {
+        margin-bottom: 30px;
+      }
+    
+      h1, h2, h3 {
+        color: #333;
+      }
+    
+      #options, #indicators {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      }
+    
+      #filters span {
+        padding: 6px 10px;
+        margin-right: 6px;
+        background-color: #eee;
+        border-radius: 6px;
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 0.2s;
+      }
+    
+      #filters span:hover {
+        background-color: #ddd;
+      }
+    
+      .deal:hover {
+        background-color: #f0f0f0;
+        transition: background-color 0.3s;
+      }
+    
+      .sale {
+        background-color: #fdfdfd;
+        padding: 8px;
+        border-left: 4px solid #ccc;
+      }
+    </style>
+    
   </head>
   <body>
     <h1>Lego</h1>
@@ -20,9 +100,10 @@
         <select name="page" id="page-select"> </select>
       </div>
       <div id="filters">
-        <span>By best discount</span>
-        <span>By most commented</span>
-        <span>By hot deals</span>
+        <span id="filter-best-discount">By best discount</span>
+        <span id="filter-most-commented">By most commented</span>
+        <span id="filter-hot-deals">By hot deals</span>
+        <span id="filter-favorites">Favorites only</span>
       </div>
       <div id="sort">
         <label for="sort-select">Sort:</label>
