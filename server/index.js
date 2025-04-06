@@ -1,4 +1,4 @@
-const parseDomain = require('parse-domain');
+const { parseDomain } = require('parse-domain');
 const websites = require('require-all')(`${__dirname}/websites`);
 
 module.exports = async link => {

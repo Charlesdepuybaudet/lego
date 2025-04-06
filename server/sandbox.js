@@ -1,14 +1,13 @@
-/* eslint-disable no-console, no-process-exit */
-const avenuedelabrique = require('./websites/avenuedelabrique');
+const vinted = require('./websites/vinted');
 
-async function sandbox (website = 'https://www.avenuedelabrique.com/nouveautes-lego') {
+async function sandbox (id = '42151') {
   try {
-    console.log(`🕵️‍♀️  browsing ${website} website`);
+    console.log(`🔍 Scraping Vinted for LEGO set id ${id}...`);
 
-    const deals = await avenuedelabrique.scrape(website);
+    const sales = await vinted.scrape(id);
 
-    console.log(deals);
-    console.log('done');
+    console.log(sales);
+    console.log('✅ Done');
     process.exit(0);
   } catch (e) {
     console.error(e);
@@ -16,6 +15,6 @@ async function sandbox (website = 'https://www.avenuedelabrique.com/nouveautes-l
   }
 }
 
-const [,, eshop] = process.argv;
+const [,, legoId] = process.argv;
 
-sandbox(eshop);
+sandbox(legoId);
