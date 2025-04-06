@@ -2,7 +2,7 @@
 
 ## 📐 Low-Fidelity Sketch
 
-![wireframe](my-sketch.png)
+![wireframe](IMG_5568.jpeg)
 
 ---
 
