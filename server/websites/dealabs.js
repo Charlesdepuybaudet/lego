@@ -1,8 +1,6 @@
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 
-const BASE_URL = 'https://www.dealabs.com/search?q=lego+';
-
 /**
  * Parse the HTML content from Dealabs
  * @param {string} data - HTML page content
@@ -42,11 +40,11 @@ const parse = (data) => {
 
 /**
  * Scrape Dealabs for a LEGO ID
- * @param {string} id - LEGO set ID
+ * @param {string} keyword - LEGO set ID or 'lego'
  * @returns {Array} deals
  */
-module.exports.scrape = async (id) => {
-  const url = `${BASE_URL}${id}`;
+module.exports.scrape = async (keyword = 'lego') => {
+  const url = `https://www.dealabs.com/search?q=${keyword}`;
   const response = await fetch(url);
   const body = await response.text();
   return parse(body);

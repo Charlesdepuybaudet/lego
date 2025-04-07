@@ -4,7 +4,7 @@ const dealabs = require('./websites/dealabs');
 async function storeDeals() {
   const db = await connect();
 
-  const deals = await dealabs.scrape('https://www.dealabs.com/groupe/lego');
+  const deals = await dealabs.scrape('lego');
 
   if (deals.length === 0) {
     console.log('❌ Aucun deal récupéré');
@@ -12,8 +12,8 @@ async function storeDeals() {
   }
 
   const collection = db.collection('deals');
-
   const result = await collection.insertMany(deals);
+
   console.log(`✅ ${result.insertedCount} deals insérés dans la base.`);
 }
 
